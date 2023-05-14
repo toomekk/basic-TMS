@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add truc</title>
+</head>
+<body>
+<form action="/truck/add" method="post" enctype="multipart/form-data">
+  <label>Marka:</label>
+  <input type="text" name="brand">
+  <label>Model:</label>
+  <input type="text" name="model">
+  <label>Masa całkowita:</label>
+  <input type="text" name="truckWeight">
+    <label for="license">Licencja</label>
+    <select name="license" id="license">
+        <option value="C1"> C1 </option>
+        <option value="C1E"> C1E </option>
+        <option value="CE1"> CE </option>
+    </select>
+
+
+
+  <button type="submit">Dodaj</button>
+</form>
+<a href="/">Powrót</a>
+</body>
+</html>
