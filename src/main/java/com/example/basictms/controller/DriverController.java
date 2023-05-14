@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class DriverController {
     private DriverService driverService;
     public DriverController(DriverService driverService){this.driverService = driverService;}
-    @GetMapping("/")
-    public String getHomePage(){return "main-page";}
+
 
     @GetMapping ("/driver/add")
     public String getPage(){return "add-driver";}
 
     @PostMapping("/driver/add")
     public String addDriver(DriverRequest driverRequest) {
+        System.out.println(driverRequest);
         driverService.addDriver(driverRequest);
         return "main-page";
     }
