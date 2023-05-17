@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj nowe zlecenie</title>
+</head>
+<body>
+<h1> Dodaj nowe zlecenie transportowe</h1>
+<form action="/order/add" method="post">
+    <label>Punkt początkowy</label>
+    <input type="text" name="startingPoint">
+    <label>Punkt końcowy</label>
+    <input type="text" name="destination">
+    <label>Data rozpoczęcia zlecenia</label>
+    <input type="date" name="startDate">
+    <label>Data zakończenia zlecenia</label>
+    <input type="date" name="endDate">
+    <button type="submit">Utwórz zlecenie</button>
+
+</form>
+</body>
+</html>
