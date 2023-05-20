@@ -11,6 +11,9 @@ public class Truck {
     private String brand;
     private String model;
     private String truckWeight;
+    private long truckMileage;  //przebieg
+    private String lastReviewDate;  //data ostatniego przeglądu
+    private long reviewLimit;
 
     @Enumerated(EnumType.STRING)
     private DrivingLicense license;
@@ -28,6 +31,9 @@ public class Truck {
         this.model = model;
         this.truckWeight = truckWeight;
         this.license = license;
+        this.truckMileage = truckMileage;
+        this.lastReviewDate = lastReviewDate;
+        this.reviewLimit = reviewLimit;
     }
 
     public String getBrand() {
@@ -60,5 +66,29 @@ public class Truck {
 
     public void setLicense(DrivingLicense license) {
         this.license = license;
+    }
+
+    public long getTruckMileage() {
+        return truckMileage;
+    }
+
+    public void setTruckMileage(long truckMileage) {
+        this.truckMileage = truckMileage;
+    }
+
+    public String getLastReviewDate() {
+        return lastReviewDate;
+    }
+
+    public void setLastReviewDate(String lastReviewDate) {
+        this.lastReviewDate = lastReviewDate;
+    }
+
+    public long getReviewLimit() {
+        return reviewLimit;
+    }
+
+    public void setReviewLimit(long reviewLimit) {
+        this.reviewLimit = reviewLimit;
     }
 }
