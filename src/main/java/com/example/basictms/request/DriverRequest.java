@@ -2,6 +2,8 @@ package com.example.basictms.request;
 
 
 
+import com.example.basictms.entity.DrivingLicense;
+
 import java.util.List;
 
 public class DriverRequest {
@@ -9,9 +11,9 @@ public class DriverRequest {
 
         private String firstName;
         private String lastName;
-        private List<String> license;
+        private List<DrivingLicense> license;
 
-    public DriverRequest(String firstName, String lastName, List<String> license) {
+    public DriverRequest(String firstName, String lastName, List<DrivingLicense> license) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.license = license;
@@ -33,11 +35,11 @@ public class DriverRequest {
         this.lastName = lastName;
     }
 
-    public List<String> getLicense() {
+    public List<DrivingLicense> getLicense() {
         return license;
     }
 
-    public void setLicense(List<String> license) {
+    public void setLicense(List<DrivingLicense> license) {
         this.license = license;
     }
 

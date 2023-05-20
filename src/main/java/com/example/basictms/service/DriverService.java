@@ -16,7 +16,7 @@ public class DriverService {
 
     public void addDriver(DriverRequest driverRequest){
 
-        List<String> drivingLicense = driverRequest.getLicense();
+        List<DrivingLicense> drivingLicense = driverRequest.getLicense();
         Driver driver = new Driver(driverRequest.getFirstName(), driverRequest.getLastName(),drivingLicense );
         driverRepository.save(driver);
     }
