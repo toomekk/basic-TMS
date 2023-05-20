@@ -6,22 +6,31 @@
 </head>
 <body>
 <form action="/truck/add" method="post" enctype="multipart/form-data">
-  <label>Marka:</label>
-  <input type="text" name="brand">
-  <label>Model:</label>
-  <input type="text" name="model">
-  <label>Masa całkowita:</label>
-  <input type="text" name="truckWeight">
-    <label for="license">Licencja</label>
-    <select name="license" id="license">
-        <option value="C1"> C1 </option>
-        <option value="C1E"> C1E </option>
-        <option value="CE1"> CE </option>
+    <label>Marka:</label>
+    <select name="brand" id="brand">
+        <option value="MERCEDES"> MERCEDES</option>
+        <option value="SCANIA"> SCANIA</option>
+        <option value="VOLVO"> VOLVO</option>
+        <option value="MAN"> MAN</option>
+        <option value="IVECO"> IVECO</option>
+        <option value="DAF"> DAF</option>
+        <option value="RENAULT"> RENAULT</option>
     </select>
 
 
+    <label>Model:</label>
+    <input type="text" name="model">
+    <label>Masa całkowita:</label>
+    <input type="text" name="truckWeight">
+    <label for="license">Licencja</label>
+    <select name="license" id="license">
+        <option value="C1"> C1</option>
+        <option value="C1E"> C1E</option>
+        <option value="CE"> CE</option>
+    </select>
 
-  <button type="submit">Dodaj</button>
+
+    <button type="submit">Dodaj</button>
 </form>
 <a href="/">Powrót</a>
 </body>
