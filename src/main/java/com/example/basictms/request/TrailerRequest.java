@@ -1,47 +1,39 @@
 package com.example.basictms.request;
 
+import com.example.basictms.entity.enums.TrailerMark;
+import com.example.basictms.entity.enums.TrailerType;
+
 public class TrailerRequest {
+    private TrailerType trailerType;
+    private TrailerMark trailerMark;
 
-    private String model;
-    private String trailerWeight;
-    private String brand;
-
-    public TrailerRequest(String model, String trailerWeight, String brand) {
-        this.model = model;
-        this.trailerWeight = trailerWeight;
-        this.brand = brand;
+    public TrailerRequest(TrailerType trailerType, TrailerMark trailerMark) {
+        this.trailerType = trailerType;
+        this.trailerMark = trailerMark;
     }
 
-    public String getModel() {
-        return model;
+    public TrailerType getTrailerType() {
+        return trailerType;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public TrailerMark getTrailerMark() {
+        return trailerMark;
     }
 
-    public String getTrailerWeight() {
-        return trailerWeight;
+    public void setTrailerType(TrailerType trailerType) {
+        this.trailerType = trailerType;
     }
 
-    public void setTrailerWeight(String trailerWeight) {
-        this.trailerWeight = trailerWeight;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setTrailerMark(TrailerMark trailerMark) {
+        this.trailerMark = trailerMark;
     }
 
     @Override
     public String toString() {
         return "TrailerRequest{" +
-                "model='" + model + '\'' +
-                ", trailerWeight='" + trailerWeight + '\'' +
-                ", brand='" + brand + '\'' +
+                "trailerType=" + trailerType +
+                ", trailerMark=" + trailerMark +
                 '}';
     }
+
 }

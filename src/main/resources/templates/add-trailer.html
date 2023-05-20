@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add trailer</title>
+</head>
+<body>
+<form action="/trailer/add" method="post" enctype="multipart/form-data">
+<label for="trailer">Typ Naczepy</label>
+  <select name="trailerType" id="trailer">
+    <option value="TIPPER_TRAILER">TRIPPER_TRAILER</option>
+    <option value="CURTAIN_TRAILER">CURTAIN_TRAILER</option>
+    <option value="REFRIGERATOR_TRAILER">REFRIGERATOR_TRAILER</option>
+    <option value="TILT_TRAILER">TILT_TRAILER</option>
+    <option value="FLATBED_TRAILER">FLATBED_TRAILER</option>
+  </select>
+    <br>
+    <label for="trailer">Marka Naczepy</label>
+    <select name="trailerMark" >
+        <option value="SCHMITZ">SCHMITZ</option>
+        <option value="KRONE">KRONE</option>
+        <option value="WIELTON">WIELTON</option>
+        <option value="KOEGEL">KOEGEL</option>
+
+    </select>
+    <br>
+    <button type="submit">Dodaj</button>
+
+</form>
+
+</body>
+</html>

@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class TrucksController {
     private TruckService truckService;
-    public TrucksController(TruckService truckService){this.truckService = truckService;}
+    public TrucksController(TruckService truckService){
+        this.truckService = truckService;
+    }
 
 
     @GetMapping ("/truck/add")
