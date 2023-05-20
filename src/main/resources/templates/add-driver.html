@@ -11,11 +11,21 @@
     <input type="text" name="firstName">
     <label>Nazwisko:</label>
     <input type="text" name="lastName">
-    <label for="license">Licencja</label>
-    <select name="license" id="license">
-    <option value="C1"> C1 </option>
-    <option value="C1E"> C1E </option>
-    <option value="CE"> CE </option>
+
+    <label>Kategorie prawa jazdy:</label>
+    <label for="license">C1</label>
+    <input type="checkbox" id="license" value="C1" name="license">
+    <label for="license">C1+E</label>
+    <input type="checkbox" id="license" value="C1E" name="license">
+    <label for="license">C+E</label>
+    <input type="checkbox" id="license" value="CE" name="license">
+
+<!--    <label for="license">Licencja</label>-->
+<!--    <select name="license" id="license" multiple>-->
+<!--    <option value="C1"> C1 </option>-->
+<!--    <option value="C1E"> C1E </option>-->
+<!--    <option value="CE"> CE </option>-->
+
     </select>
 
     <button type="submit">Dodaj</button>
