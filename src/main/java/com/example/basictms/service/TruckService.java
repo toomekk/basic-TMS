@@ -1,9 +1,7 @@
 package com.example.basictms.service;
 
-import com.example.basictms.entity.Driver;
 import com.example.basictms.entity.DrivingLicense;
 import com.example.basictms.entity.Truck;
-import com.example.basictms.repository.DriverRepository;
 import com.example.basictms.repository.TruckRepository;
 import com.example.basictms.request.DriverRequest;
 import com.example.basictms.request.TruckRequest;
