@@ -9,6 +9,7 @@ public enum DrivingLicense {
     DrivingLicense(String representation) {
         this.representation = representation;
     }
+
     DrivingLicense() {
         this.representation = name();
     }
