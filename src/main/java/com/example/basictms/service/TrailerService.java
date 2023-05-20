@@ -13,8 +13,8 @@ public class TrailerService {
         this.trailerRepository = trailerRepository;
 
         } public void addTrailer(TrailerRequest trailerRequest){
-           // Trailer trailer = new Trailer(trailerRequest.getModel(), trailerRequest.getBrand(), trailerRequest.getTrailerWeight());
-          //  trailerRepository.save(trailer);
+            Trailer trailer = new Trailer(trailerRequest.getTrailerMark(), trailerRequest.getTrailerType());
+            trailerRepository.save(trailer);
 
     }
 }
