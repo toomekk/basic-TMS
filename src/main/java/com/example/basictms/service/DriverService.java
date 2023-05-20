@@ -6,6 +6,8 @@ import com.example.basictms.repository.DriverRepository;
 import com.example.basictms.request.DriverRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DriverService {
     private DriverRepository driverRepository;
@@ -14,7 +16,7 @@ public class DriverService {
 
     public void addDriver(DriverRequest driverRequest){
 
-        DrivingLicense drivingLicense = DrivingLicense.valueOf(driverRequest.getLicense());
+        List<DrivingLicense> drivingLicense = driverRequest.getLicense();
         Driver driver = new Driver(driverRequest.getFirstName(), driverRequest.getLastName(),drivingLicense );
         driverRepository.save(driver);
     }
