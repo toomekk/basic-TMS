@@ -1,6 +1,6 @@
 package com.example.basictms.service;
 
-import com.example.basictms.entity.enums.DrivingLicense;
+import com.example.basictms.entity.DrivingLicense;
 import com.example.basictms.entity.Truck;
 import com.example.basictms.repository.TruckRepository;
 import com.example.basictms.request.DriverRequest;

@@ -1,6 +1,6 @@
 package com.example.basictms.request;
 
-import com.example.basictms.entity.enums.DrivingLicense;
+import com.example.basictms.entity.DrivingLicense;
 
 public class TruckRequest {
     private String brand;
