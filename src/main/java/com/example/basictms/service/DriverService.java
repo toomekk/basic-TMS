@@ -1,7 +1,7 @@
 package com.example.basictms.service;
 
 import com.example.basictms.entity.Driver;
-import com.example.basictms.entity.DrivingLicense;
+import com.example.basictms.entity.enums.DrivingLicense;
 import com.example.basictms.repository.DriverRepository;
 import com.example.basictms.request.DriverRequest;
 import org.springframework.stereotype.Service;

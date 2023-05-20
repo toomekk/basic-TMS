@@ -1,5 +1,6 @@
 package com.example.basictms.entity;
 
+import com.example.basictms.entity.enums.DrivingLicense;
 import jakarta.persistence.*;
 
 @Entity

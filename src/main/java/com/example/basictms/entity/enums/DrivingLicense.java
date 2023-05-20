@@ -1,4 +1,4 @@
-package com.example.basictms.entity;
+package com.example.basictms.entity.enums;
 
 
 public enum DrivingLicense {
