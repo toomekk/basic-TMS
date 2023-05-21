@@ -1,36 +1,38 @@
 package com.example.basictms;
+import com.example.basictms.entity.Truck;
+import org.springframework.stereotype.Service;
+
 import java.sql.*;
 import java.time.LocalDate;
-
+@Service
 public class TruckReview {
 
-    private long reviewLimit = 30000;
-    private long truckMileage = 10500;
 
-    private String lastReviewDate = "2022-03-03";
-    long remainingKilometers = reviewLimit - truckMileage;
 
-    /*if(remainingKilometers >0){
-        System.out.println("Pozostało " + remainingKilometers + " km do przeglądu.");
-        checkReminder(truckMileage, reviewLimit, lastReviewDate);
-    } else
-
-    {
-        LocalDate ostatniPrzeglad = LocalDate.parse(lastReviewDate);
-        LocalDate today = LocalDate.now();
-        long daysLeft = today.toEpochDay() - ostatniPrzeglad.toEpochDay();
-
-        if (daysLeft >= 365) {
-            System.out.println("Przegląd jest już wymagany!");
-            saveMileageToDB(reviewLimit, today.toString());
+    public String doReview(Truck truck) {
+        System.out.println(truck);
+        long remainingKilometers = truck.getReviewLimit() - truck.getTruckMileage();
+        if (remainingKilometers > 0) {
+           //checkReminder(truck.getTruckMileage(), truck.getReviewLimit(), truck.getLastReviewDate());
+            return "Pozostało " + remainingKilometers + " km do przeglądu.";
         } else {
-            System.out.println("Przegląd nie jest jeszcze wymagany.");
-            checkReminder(truckMileage, reviewLimit, lastReviewDate);
+            LocalDate lastReviewDate = LocalDate.parse(truck.getLastReviewDate());
+            LocalDate today = LocalDate.now();
+            long daysLeft = today.toEpochDay() - lastReviewDate.toEpochDay();
+
+            if (daysLeft >= 365) {
+
+              //  saveMileageToDB(reviewLimit, today.toString());
+                return "Przegląd jest już wymagany!";
+            } else {
+               // checkReminder(truck.getTruckMileage(), truck.getReviewLimit(), truck.getLastReviewDate());
+                return "Przegląd nie jest jeszcze wymagany.";
+            }
         }
     }
 
 
-    private static void checkReminder(long truckMileage, long reviewLimit, String lastReviewDate) {
+   /* private static void checkReminder(long truckMileage, long reviewLimit, String lastReviewDate) {
         LocalDate lastReviewDate = LocalDate.parse(lastReviewDate);
         LocalDate today = LocalDate.now();
         long daysLeft = today.toEpochDay() - lastReviewDate.toEpochDay();
