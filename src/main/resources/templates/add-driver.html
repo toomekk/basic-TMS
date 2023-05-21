@@ -5,21 +5,27 @@
     <title>Add new Driver</title>
 </head>
 <body>
+<h1> Dodaj Kierowce</h1>
 
 <form action="/driver/add" method="post" enctype="multipart/form-data">
     <label>Imię:</label>
     <input type="text" name="firstName">
     <label>Nazwisko:</label>
     <input type="text" name="lastName">
+    <br>
+    <br>
     <label for="salary">Wynagrodzenie: </label>
     <select name="salaryType" id="salary">
         <option value="BASIC">KATEGORIA I</option>
         <option value="MEDIUM">KATEGORIA II</option>
         <option value="HIGH">KATEGORIA III</option>
+        <br>
+        <br>
     </select>
     <label for="salary">PREMIA Uznaniowa: </label>
     <input type="checkbox" id="salary" value="DISCRETIONARY_BONUS" name="salaryType">
-
+        <br>
+        <br>
     <label>Kategorie prawa jazdy:</label>
     <label for="license">C1</label>
     <input type="checkbox" id="license" value="C1" name="license">
@@ -27,12 +33,13 @@
     <input type="checkbox" id="license" value="C1E" name="license">
     <label for="license">C+E</label>
     <input type="checkbox" id="license" value="CE" name="license">
-
-
     </select>
-
+        <br>
+        <br>
     <button type="submit">Dodaj</button>
 </form>
+<br>
+<br>
 <a href="/">Powrót</a>
 
 

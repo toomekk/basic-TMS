@@ -5,6 +5,8 @@
     <title>Add tire</title>
 </head>
 <body>
+<h1> Dodaj opony</h1>
+
 <form action="/tire/add" method="post" enctype="multipart/form-data">
   <label for="tire">Opony</label>
   <select name="tireBrand" id="tire">
@@ -13,17 +15,23 @@
     <option value="MICHELIN">MICHELIN</option>
   </select>
   <br>
+  <br>
   <label for="tire">Czy opona jest nowa?</label>
   <select name="isBrandNew">
-    <option value="NEW_TIRE">NEW_TIRE</option>
-    <option value="USED_TIRE">USED_TIRED</option>
+    <option value="NEW_TIRE">NOWA</option>
+    <option value="USED_TIRE">UŻYWANA</option>
   </select>
+  <br>
   <br>
   <label>Żywotność opony w kilometrach</label>
   <input type="text" name="tireLifeKm">
+  <br>
+  <br>
   <button type="submit">Dodaj</button>
 
 </form>
-
+<br>
+<br>
+<a href="/">Powrót</a>
 </body>
 </html>

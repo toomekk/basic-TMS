@@ -5,6 +5,8 @@
     <title>Add truc</title>
 </head>
 <body>
+<h1> Dodaj Pojazd</h1>
+
 <form action="/truck/add" method="post" enctype="multipart/form-data">
     <label>Marka:</label>
     <select name="brand" id="brand">
@@ -17,28 +19,34 @@
         <option value="RENAULT"> RENAULT</option>
     </select>
 
-
     <label>Model:</label>
     <input type="text" name="model">
+    <br>
+    <br>
     <label>Masa całkowita:</label>
     <input type="text" name="truckWeight">
       <label>Przebieg:</label>
     <input type="text" name="truckMileage">
+    <br>
+    <br>
     <label>Data ostatniego przeglądu:</label>
     <input type="date" name="lastReviewDate">
     <label>Limit przebiegu:</label>
     <input type="text" name="reviewLimit">
+    <br>
+    <br>
     <label for="license">Licencja</label>
     <select name="license" id="license">
         <option value="C1"> C1 </option>
         <option value="C1E"> C1E </option>
         <option value="CE1"> CE </option>
     </select>
-
-
+    <br>
+    <br>
 
   <button type="submit">Dodaj</button>
 </form>
+<br>
 <a href="/">Powrót</a>
 </body>
 </html>
