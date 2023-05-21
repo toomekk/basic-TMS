@@ -17,7 +17,7 @@ public class OrderService {
 
     public void createOrder(OrderCreationRequest request) {
 
-        Order order = new Order(request.getStartingPoint(), request.getDestination(),request.getStartDate(),request.getEndDate() );
+        Order order = new Order(request.getStartingPoint(), request.getDestination(),request.getStartDate(),request.getEndDate(), request.getOfferedPrice());
         repository.save(order);
     }
 }

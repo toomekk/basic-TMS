@@ -14,15 +14,17 @@ public class Order {
     private String destination;
     private LocalDate startDate;
     private LocalDate endDate;
+    private double offeredPrice;
 
     public Order() {
     }
 
-    public Order(String startingPoint, String destination, LocalDate startDate, LocalDate endDate) {
+    public Order(String startingPoint, String destination, LocalDate startDate, LocalDate endDate, double offeredPrice) {
         this.startingPoint = startingPoint;
         this.destination = destination;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.offeredPrice = offeredPrice;
     }
 
     public String getStartingPoint() {
