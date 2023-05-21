@@ -4,15 +4,13 @@ import java.time.LocalDate;
 
 public class TruckReview {
 
-   /* private long reviewLimit = 30000;
+   /private long reviewLimit = 30000;
     private long truckMileage = 10500;
 
     private String lastReviewDate = "2022-03-03";
     long remainingKilometers = reviewLimit - truckMileage;
 
-            if(remainingKilometers >0)
-
-    {
+    /*if(remainingKilometers >0){
         System.out.println("Pozostało " + remainingKilometers + " km do przeglądu.");
         checkReminder(truckMileage, reviewLimit, lastReviewDate);
     } else
