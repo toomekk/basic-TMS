@@ -26,14 +26,15 @@ public class Truck {
     public Truck() {
     }
 
-    public Truck(TruckBrand brand, String model, String truckWeight, DrivingLicense license) {
+    public Truck(TruckBrand brand, String model, String truckWeight, long truckMileage, String lastReviewDate, long reviewLimit,
+                 DrivingLicense license) {
         this.brand = brand;
         this.model = model;
         this.truckWeight = truckWeight;
-        this.license = license;
         this.truckMileage = truckMileage;
         this.lastReviewDate = lastReviewDate;
         this.reviewLimit = reviewLimit;
+        this.license = license;
     }
 
     public TruckBrand getBrand() {
@@ -90,5 +91,19 @@ public class Truck {
 
     public void setReviewLimit(long reviewLimit) {
         this.reviewLimit = reviewLimit;
+    }
+
+    @Override
+    public String toString() {
+        return "Truck{" +
+                "id=" + id +
+                ", brand=" + brand +
+                ", model='" + model + '\'' +
+                ", truckWeight='" + truckWeight + '\'' +
+                ", truckMileage=" + truckMileage +
+                ", lastReviewDate='" + lastReviewDate + '\'' +
+                ", reviewLimit=" + reviewLimit +
+                ", license=" + license +
+                '}';
     }
 }
