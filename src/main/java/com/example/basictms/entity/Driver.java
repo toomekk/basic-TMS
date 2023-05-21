@@ -2,6 +2,8 @@ package com.example.basictms.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "drivers")
 public class Driver {
@@ -11,15 +13,15 @@ public class Driver {
     private String firstName;
     private String lastName;
     @Enumerated(EnumType.STRING)
-    private DrivingLicense license;
+    private List<DrivingLicense> licenses;
 
     public Driver() {
     }
 
-    public Driver(String firstName, String lastName, DrivingLicense license) {
+    public Driver(String firstName, String lastName, List<DrivingLicense> license) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.license = license;
+        this.licenses = license;
     }
 
     public String getFirstName() {
@@ -38,11 +40,11 @@ public class Driver {
         this.lastName = lastName;
     }
 
-    public DrivingLicense getLicense() {
-        return license;
+    public List<DrivingLicense> getLicenses() {
+        return licenses;
     }
 
-    public void setLicense(DrivingLicense license) {
-        this.license = license;
+    public void setLicenses(List<DrivingLicense> license) {
+        this.licenses = license;
     }
 }

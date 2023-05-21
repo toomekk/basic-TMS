@@ -8,7 +8,7 @@ public class Truck {
     @Id
     @GeneratedValue
     private Long id;
-    private String brand;
+    private TruckBrand brand;
     private String model;
     private String truckWeight;
     private long truckMileage;  //przebieg
@@ -26,7 +26,7 @@ public class Truck {
     public Truck() {
     }
 
-    public Truck(String brand, String model, String truckWeight, DrivingLicense license) {
+    public Truck(TruckBrand brand, String model, String truckWeight, DrivingLicense license) {
         this.brand = brand;
         this.model = model;
         this.truckWeight = truckWeight;
@@ -36,11 +36,11 @@ public class Truck {
         this.reviewLimit = reviewLimit;
     }
 
-    public String getBrand() {
+    public TruckBrand getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(TruckBrand brand) {
         this.brand = brand;
     }
 

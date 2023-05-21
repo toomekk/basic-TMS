@@ -7,11 +7,6 @@ public class TruckRequest {
     private String model;
     private String truckWeight;
     private String license;
-    private long truckMileage;  //przebieg
-    private String lastReviewDate;  //data ostatniego przeglądu
-    private long reviewLimit;
-
-    private String coś;
 
     //private String TCO; //CAŁKOWITY KOSZT EKSPLOATACJI
 
@@ -20,10 +15,7 @@ public class TruckRequest {
         this.brand = brand;
         this.model = model;
         this.truckWeight = truckWeight;
-        this.license = license;
-        this.truckMileage = truckMileage;
-        this.lastReviewDate = lastReviewDate;
-        this.reviewLimit = reviewLimit;
+        this.license = String.valueOf(license);
     }
 
     public String getBrand() {
@@ -58,30 +50,6 @@ public class TruckRequest {
         this.license = license;
     }
 
-    public long getTruckMileage() {
-        return truckMileage;
-    }
-
-    public void setTruckMileage(long truckMileage) {
-        this.truckMileage = truckMileage;
-    }
-
-    public String getLastReviewDate() {
-        return lastReviewDate;
-    }
-
-    public void setLastReviewDate(String lastReviewDate) {
-        this.lastReviewDate = lastReviewDate;
-    }
-
-    public long getReviewLimit() {
-        return reviewLimit;
-    }
-
-    public void setReviewLimit(long reviewLimit) {
-        this.reviewLimit = reviewLimit;
-    }
-
     @Override
     public String toString() {
         return "TruckRequest{" +
@@ -89,9 +57,6 @@ public class TruckRequest {
                 ", model='" + model + '\'' +
                 ", truckWeight='" + truckWeight + '\'' +
                 ", license='" + license + '\'' +
-                ", truckMileage=" + truckMileage +
-                ", lastReviewDate='" + lastReviewDate + '\'' +
-                ", reviewLimit=" + reviewLimit +
                 '}';
     }
 }

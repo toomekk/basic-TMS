@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add tire</title>
+</head>
+<body>
+<form action="/tire/add" method="post" enctype="multipart/form-data">
+  <label for="tire">Opony</label>
+  <select name="tireBrand" id="tire">
+    <option value="CONTINENTAL">CONTINENTAL</option>
+    <option value="GOODYEAR">GOODYEAR</option>
+    <option value="MICHELIN">MICHELIN</option>
+  </select>
+  <br>
+  <label for="tire">Czy opona jest nowa?</label>
+  <select name="isBrandNew">
+    <option value="NEW_TIRE">NEW_TIRE</option>
+    <option value="USED_TIRE">USED_TIRED</option>
+  </select>
+  <br>
+  <label>Żywotność opony w kilometrach</label>
+  <input type="text" name="tireLifeKm">
+  <button type="submit">Dodaj</button>
+
+</form>
+
+</body>
+</html>
