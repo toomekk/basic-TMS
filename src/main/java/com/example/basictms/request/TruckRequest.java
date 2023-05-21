@@ -12,7 +12,7 @@ public class TruckRequest {
     //private String TCO; //CAŁKOWITY KOSZT EKSPLOATACJI
 
 
-    public TruckRequest(TruckBrand brand, String model, String truckWeight, DrivingLicense license) {
+    public TruckRequest(TruckBrand brand, String model, String truckWeight, String license, long truckMileage, String lastReviewDate, long reviewLimit) {
         this.brand = brand;
         this.model = model;
         this.truckWeight = truckWeight;
