@@ -1,7 +1,6 @@
 package com.example.basictms;
 import com.example.basictms.entity.Truck;
 import org.springframework.stereotype.Service;
-
 import java.sql.*;
 import java.time.LocalDate;
 @Service

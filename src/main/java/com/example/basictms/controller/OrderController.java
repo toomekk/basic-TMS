@@ -28,9 +28,10 @@ public class OrderController {
                               @RequestParam String destination,
                                @RequestParam LocalDate startDate,
                                @RequestParam LocalDate endDate,
+                               @RequestParam double offeredPrice,
                                Model model) {
         try {
-            orderService.createOrder(new OrderCreationRequest(startingPoint, destination, startDate, endDate));
+            orderService.createOrder(new OrderCreationRequest(startingPoint, destination, startDate, endDate, offeredPrice));
             model.addAttribute("message", "Dodano zlecenie: ");
         } catch (OrderServiceException e) {
             model.addAttribute("message", e.getMessage());
