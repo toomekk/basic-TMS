@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wyszukiwarka zamówień</title>
+</head>
+<body>
+<form action="/order/find" method="post" enctype="multipart/form-data">
+    <label>Wybierz status zamówienia:</label>
+    <br>
+    <input type="radio" th:field="${request.orderStatus}" value="IN_PREPARATION">
+    <label>Otwarte</label>
+    <input type="radio" th:field="${request.orderStatus}" value="IN_PROGRESS">
+    <label>W trakcie</label>
+    <input type="radio" th:field="${request.orderStatus}" value="DONE">
+    <label>Zakończone</label>
+    <input type="radio" th:field="${request.orderStatus}" value="CANCELLED">
+    <label>Anulowane</label>
+    <br>
+    <button type="submit">Wyszukaj</button>
+    <br>
+</form>
+
+<table>
+    <tr th:each="order : ${orders}">
+        <td th:text="${order.startingPoint}"></td>
+        <td th:text="${order.destination}"></td>
+        <td th:text="${order.startDate}"></td>
+        <td th:text="${order.endDate}"></td>
+        <td th:text="${order.offeredPrice}"></td>
+        <td th:text="${order.orderStatus}"></td>
+    </tr>
+</table>
+
+
+<a href="/">Powrót</a>
+</body>
+</html>

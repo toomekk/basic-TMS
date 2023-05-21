@@ -1,7 +1,10 @@
 package com.example.basictms.controller;
 
+import com.example.basictms.entity.enums.OrderStatus;
 import com.example.basictms.exception.OrderServiceException;
 import com.example.basictms.request.OrderCreationRequest;
+import com.example.basictms.request.OrderFilterRequest;
+import com.example.basictms.response.OrderResponse;
 import com.example.basictms.service.OrderService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 public class OrderController {
@@ -28,10 +32,11 @@ public class OrderController {
                               @RequestParam String destination,
                                @RequestParam LocalDate startDate,
                                @RequestParam LocalDate endDate,
+                               @RequestParam OrderStatus orderStatus,
                                @RequestParam double offeredPrice,
                                Model model) {
         try {
-            orderService.createOrder(new OrderCreationRequest(startingPoint, destination, startDate, endDate, offeredPrice));
+            orderService.createOrder(new OrderCreationRequest(startingPoint, destination, startDate, endDate, orderStatus,offeredPrice));
             model.addAttribute("message", "Dodano zlecenie: ");
         } catch (OrderServiceException e) {
             model.addAttribute("message", e.getMessage());
@@ -39,4 +44,21 @@ public class OrderController {
         return "main-page";
 
     }
-}
+
+    @GetMapping("/order/find")
+    public String getFindOrderPage(Model model) {
+        model.addAttribute("request", new OrderFilterRequest());
+        List<OrderResponse> orders =  orderService.getAllOrders();
+        model.addAttribute("orders", orders);
+        return "find-order";
+    }
+
+    @PostMapping("/order/find")
+    public String filteredFindOrderPage(
+            @ModelAttribute("request") OrderFilterRequest request,
+            Model model) {
+        List<OrderResponse> orders = orderService.getOrder(request);
+        model.addAttribute("orders", orders);
+        System.out.println(request);
+        return "find-order";
+}}
