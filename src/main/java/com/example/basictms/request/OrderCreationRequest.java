@@ -7,12 +7,14 @@ public class OrderCreationRequest {
     private String destination;
     private LocalDate startDate;
     private LocalDate endDate;
+    private double offeredPrice;
 
-    public OrderCreationRequest(String startingPoint, String destination, LocalDate startDate, LocalDate endDate) {
+    public OrderCreationRequest(String startingPoint, String destination, LocalDate startDate, LocalDate endDate, double offeredPrice) {
         this.startingPoint = startingPoint;
         this.destination = destination;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.offeredPrice = offeredPrice;
     }
 
     public String getStartingPoint() {
@@ -45,6 +47,14 @@ public class OrderCreationRequest {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public double getOfferedPrice() {
+        return offeredPrice;
+    }
+
+    public void setOfferedPrice(double offeredPrice) {
+        this.offeredPrice = offeredPrice;
     }
 
     @Override
