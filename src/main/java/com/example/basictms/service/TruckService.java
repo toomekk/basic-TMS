@@ -10,15 +10,18 @@ import org.springframework.stereotype.Service;
 @Service
 public class TruckService {
     private TruckRepository truckRepository;
-    public TruckService(TruckRepository truckRepository){this.truckRepository = truckRepository;}
 
-    public void addTruck(TruckRequest truckRequest){
+    public TruckService(TruckRepository truckRepository) {
+        this.truckRepository = truckRepository;
+    }
+
+    public void addTruck(TruckRequest truckRequest) {
 
 
         DriverRequest driverRequest;
 
         Truck truck = new Truck(truckRequest.getBrand(), truckRequest.getModel(), truckRequest.getTruckWeight(),
-                DrivingLicense.valueOf(truckRequest.getLicense()) );
+                DrivingLicense.valueOf(truckRequest.getLicense()));
         truckRepository.save(truck);
     }
 }
