@@ -12,6 +12,7 @@ public class Driver {
     private Long id;
     private String firstName;
     private String lastName;
+    private long salary;
     @Enumerated(EnumType.STRING)
     private List<DrivingLicense> licenses;
 
@@ -22,6 +23,7 @@ public class Driver {
         this.firstName = firstName;
         this.lastName = lastName;
         this.licenses = license;
+        this.salary = salary;
     }
 
     public String getFirstName() {
@@ -46,5 +48,13 @@ public class Driver {
 
     public void setLicenses(List<DrivingLicense> license) {
         this.licenses = license;
+    }
+
+    public long getSalary() {
+        return salary;
+    }
+
+    public void setSalary(long salary) {
+        this.salary = salary;
     }
 }

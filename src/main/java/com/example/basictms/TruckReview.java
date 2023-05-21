@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class TruckReview {
 
-   /private long reviewLimit = 30000;
+    private long reviewLimit = 30000;
     private long truckMileage = 10500;
 
     private String lastReviewDate = "2022-03-03";
