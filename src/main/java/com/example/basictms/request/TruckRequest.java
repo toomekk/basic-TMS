@@ -11,6 +11,8 @@ public class TruckRequest {
     private String lastReviewDate;  //data ostatniego przeglądu
     private long reviewLimit;
 
+    private String coś;
+
     //private String TCO; //CAŁKOWITY KOSZT EKSPLOATACJI
 
 
