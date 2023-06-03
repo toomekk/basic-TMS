@@ -25,6 +25,9 @@ public class TruckRequest {
         this.reviewLimit = reviewLimit;
     }
 
+    public TruckRequest() {
+    }
+
     public TruckBrand getBrand() {
         return brand;
     }
@@ -80,6 +83,7 @@ public class TruckRequest {
     public void setReviewLimit(long reviewLimit) {
         this.reviewLimit = reviewLimit;
     }
+
 
     @Override
     public String toString() {
