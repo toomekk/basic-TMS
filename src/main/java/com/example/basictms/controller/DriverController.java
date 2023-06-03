@@ -4,6 +4,7 @@ import com.example.basictms.entity.Driver;
 import com.example.basictms.request.DriverRequest;
 import com.example.basictms.service.DriverService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -17,9 +18,14 @@ public class DriverController {
     public String getPage(){return "add-driver";}
 
     @PostMapping("/driver/add")
-    public String addDriver(DriverRequest driverRequest) {
+    public String addDriver(DriverRequest driverRequest, Model model) {
         System.out.println(driverRequest);
-        driverService.addDriver(driverRequest);
+        try{
+            driverService.addDriver(driverRequest);
+        }catch (IllegalArgumentException e){
+            model.addAttribute("error", e.getMessage());
+            return "error-page";
+        }
         return "main-page";
     }
 

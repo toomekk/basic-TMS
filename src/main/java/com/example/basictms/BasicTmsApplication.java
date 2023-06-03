@@ -11,3 +11,11 @@ public class BasicTmsApplication {
 	}
 
 }
+
+
+
+/*
+* wybrać samochód
+* wybrać kierowcę
+* stworzyć zlecenie
+* */

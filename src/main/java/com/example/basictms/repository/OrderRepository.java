@@ -3,10 +3,11 @@ package com.example.basictms.repository;
 import com.example.basictms.entity.Order;
 import com.example.basictms.entity.enums.OrderStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
 public interface OrderRepository extends JpaRepository<Order,Long> {
-List<Order> findByOrderStatus(OrderStatus orderStatus);
+    List<Order> findByOrderStatus(OrderStatus orderStatus);
 
 }
