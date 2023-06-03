@@ -1,26 +1,46 @@
-package com.example.basictms.request;
+package com.example.basictms.response;
 
 import com.example.basictms.entity.enums.OrderStatus;
-import jakarta.persistence.Enumerated;
-
 import java.time.LocalDate;
+import java.util.Objects;
 
-public class OrderCreationRequest {
+public class OrderResponse {
+
     private String startingPoint;
     private String destination;
     private LocalDate startDate;
     private LocalDate endDate;
-    @Enumerated
+
     private OrderStatus orderStatus;
     private double offeredPrice;
 
-    public OrderCreationRequest(String startingPoint, String destination, LocalDate startDate, LocalDate endDate, OrderStatus orderStatus, double offeredPrice) {
+    public OrderResponse(String startingPoint, String destination, LocalDate startDate, LocalDate endDate, OrderStatus orderStatus, double offeredPrice) {
         this.startingPoint = startingPoint;
         this.destination = destination;
         this.startDate = startDate;
         this.endDate = endDate;
         this.orderStatus = orderStatus;
         this.offeredPrice = offeredPrice;
+    }
+
+    public String getStartingPoint() {
+        return startingPoint;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public double getOfferedPrice() {
+        return offeredPrice;
     }
 
     public OrderStatus getOrderStatus() {
@@ -31,49 +51,23 @@ public class OrderCreationRequest {
         this.orderStatus = orderStatus;
     }
 
-    public String getStartingPoint() {
-        return startingPoint;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrderResponse that = (OrderResponse) o;
+        return offeredPrice == that.offeredPrice && Objects.equals(startingPoint, that.startingPoint) && orderStatus == that.orderStatus;
     }
 
-    public void setStartingPoint(String startingPoint) {
-        this.startingPoint = startingPoint;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
-
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
-    }
-
-    public double getOfferedPrice() {
-        return offeredPrice;
-    }
-
-    public void setOfferedPrice(double offeredPrice) {
-        this.offeredPrice = offeredPrice;
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderStatus);
     }
 
     @Override
     public String toString() {
-        return "OrderCreationRequest{" +
+        return "OrderResponse{" +
                 "startingPoint='" + startingPoint + '\'' +
                 ", destination='" + destination + '\'' +
                 ", startDate=" + startDate +

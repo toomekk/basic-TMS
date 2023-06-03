@@ -1,5 +1,6 @@
 package com.example.basictms.entity;
 
+import com.example.basictms.entity.enums.OrderStatus;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -14,16 +15,37 @@ public class Order {
     private String destination;
     private LocalDate startDate;
     private LocalDate endDate;
+    @Enumerated
+    private OrderStatus orderStatus;
     private double offeredPrice;
 
     public Order() {
     }
 
-    public Order(String startingPoint, String destination, LocalDate startDate, LocalDate endDate, double offeredPrice) {
+
+
+    public Order(String startingPoint, String destination, LocalDate startDate, LocalDate endDate, OrderStatus orderStatus, double offeredPrice) {
         this.startingPoint = startingPoint;
         this.destination = destination;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.orderStatus = orderStatus;
+        this.offeredPrice = offeredPrice;
+    }
+
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public double getOfferedPrice() {
+        return offeredPrice;
+    }
+
+    public void setOfferedPrice(double offeredPrice) {
         this.offeredPrice = offeredPrice;
     }
 
@@ -62,10 +84,12 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                ", startingPoint='" + startingPoint + '\'' +
+                "startingPoint='" + startingPoint + '\'' +
                 ", destination='" + destination + '\'' +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
+                ", orderStatus=" + orderStatus +
+                ", offeredPrice=" + offeredPrice +
                 '}';
     }
 }
