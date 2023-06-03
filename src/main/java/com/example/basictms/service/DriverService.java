@@ -15,7 +15,9 @@ public class DriverService {
     public DriverService(DriverRepository driverRepository){this.driverRepository = driverRepository;}
 
     public void addDriver(DriverRequest driverRequest){
-
+        if (driverRequest.getFirstName().isEmpty()) {
+            throw new IllegalArgumentException("Nie podano imienia");
+        }
         List<DrivingLicense> drivingLicense = driverRequest.getLicense();
         Driver driver = new Driver(driverRequest.getFirstName(), driverRequest.getLastName(),drivingLicense );
         driverRepository.save(driver);
