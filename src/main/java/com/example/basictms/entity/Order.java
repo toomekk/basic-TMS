@@ -41,10 +41,10 @@ public class Order {
         this.offeredPrice = offeredPrice;
     }
 
+
     public long getId() {
         return id;
     }
-
 
     public Truck getTruck() {
         return truck;
