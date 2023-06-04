@@ -2,10 +2,7 @@ package com.example.basictms.entity;
 
 import com.example.basictms.entity.enums.OrderStatus;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Future;
-import jakarta.validation.constraints.FutureOrPresent;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
+import org.hibernate.annotations.Cascade;
 
 import java.time.LocalDate;
 
@@ -15,18 +12,20 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @NotBlank
     private String startingPoint;
-    @NotBlank
     private String destination;
-    @FutureOrPresent
     private LocalDate startDate;
-    @Future
     private LocalDate endDate;
     @Enumerated
     private OrderStatus orderStatus;
-    @Min(1)
     private double offeredPrice;
+    @ManyToOne
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @JoinColumn(name = "truck_id")
+    private Truck truck = null;
+    @ManyToOne
+    @JoinColumn(name = "driver_id")
+    private Driver driver;
 
     public Order() {
     }
@@ -40,6 +39,27 @@ public class Order {
         this.endDate = endDate;
         this.orderStatus = orderStatus;
         this.offeredPrice = offeredPrice;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+
+    public Truck getTruck() {
+        return truck;
+    }
+
+    public void setTruck(Truck truck) {
+        this.truck = truck;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 
     public OrderStatus getOrderStatus() {

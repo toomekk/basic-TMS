@@ -6,6 +6,9 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "trucks")
 public class Truck {
@@ -27,10 +30,11 @@ public class Truck {
     @Enumerated(EnumType.STRING)
     private DrivingLicense license;
 
+    @OneToMany(mappedBy = "truck",fetch = FetchType.EAGER)
+    private List<Order> orders = new ArrayList<>();
+
     //private String TCO; //CAŁKOWITY KOSZT EKSPLOATACJI
     //można rozbudowac o średnie spalanie, opony, przeglądy, naprawy, licencje dodatkowe
-
-
 
     public Truck() {
     }
