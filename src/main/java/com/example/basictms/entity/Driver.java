@@ -1,5 +1,6 @@
 package com.example.basictms.entity;
 
+import com.example.basictms.entity.enums.SalaryType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
