@@ -10,9 +10,9 @@ import java.util.List;
 
 public class DriverRequest {
 
-        @NotEmpty(message = "Imię nie może być puste!")
+        @NotEmpty(message = "ERROR ! Imię nie może być puste!")
         private String firstName;
-        @NotEmpty(message = "Nazwisko nie może być puste!")
+        @NotEmpty(message = "ERROR ! Nazwisko nie może być puste!")
         private String lastName;
         private SalaryType salaryType;
         private List<DrivingLicense> license;
@@ -22,6 +22,10 @@ public class DriverRequest {
         this.lastName = lastName;
         this.salaryType = salaryType;
         this.license = license;
+    }
+
+    public DriverRequest() {
+
     }
 
     public String getFirstName() {

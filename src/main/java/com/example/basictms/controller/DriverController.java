@@ -8,28 +8,36 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class DriverController {
     private DriverService driverService;
-    public DriverController(DriverService driverService){this.driverService = driverService;}
+
+    public DriverController(DriverService driverService) {
+        this.driverService = driverService;
+    }
 
 
-    @GetMapping ("/driver/add")
-    public String getPage(){return "add-driver";}
+    @GetMapping("/driver/add")
+    public String getPage(Model model) {
+        DriverRequest driverRequest= new DriverRequest();
+        model.addAttribute("driver", driverRequest);
+        return "add-driver";
+    }
 
     @PostMapping("/driver/add")
-    public String addDriver(@Valid DriverRequest driverRequest, BindingResult bindingResult, Model model) {
+    public String addDriver(@ModelAttribute(name="driver") @Valid DriverRequest driverRequest, BindingResult bindingResult, Model model) {
         System.out.println(driverRequest);
         System.out.println(bindingResult.getModel());
-        if(bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             model.addAttribute("error", bindingResult.getFieldError().getDefaultMessage());
             return "add-driver";
         }
-        try{
+        try {
             driverService.addDriver(driverRequest);
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             model.addAttribute("error", e.getMessage());
             return "error-page";
         }

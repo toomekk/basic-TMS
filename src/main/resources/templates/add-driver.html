@@ -8,15 +8,18 @@
 <div th:text="${error}"> </div>
 <h1> Dodaj Kierowce</h1>
 
-<form action="/driver/add" method="post" enctype="multipart/form-data">
+<form th:object="${driver}" action="/driver/add" method="post" enctype="multipart/form-data">
     <label>Imię:</label>
-    <input type="text" name="firstName">
+    <input type="text" th:field="*{firstName}">
+    <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+    <br>
     <label>Nazwisko:</label>
-    <input type="text" name="lastName">
+    <input type="text" th:field="*{lastName}">
+    <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
     <br>
     <br>
     <label for="salary">Wynagrodzenie: </label>
-    <select name="salaryType" id="salary">
+    <select th:field="*{salaryType}" id="salary">
         <option value="BASIC">KATEGORIA I</option>
         <option value="MEDIUM">KATEGORIA II</option>
         <option value="HIGH">KATEGORIA III</option>
