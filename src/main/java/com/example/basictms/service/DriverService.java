@@ -19,7 +19,9 @@ public class DriverService {
             throw new IllegalArgumentException("Nie podano danych !");
         }
         List<DrivingLicense> drivingLicense = driverRequest.getLicense();
+        System.out.println(driverRequest);
         Driver driver = new Driver(driverRequest.getFirstName(), driverRequest.getLastName(), driverRequest.getSalaryType(),drivingLicense );
+        System.out.println(driver);
         driverRepository.save(driver);
     }
 }

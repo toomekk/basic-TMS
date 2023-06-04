@@ -17,6 +17,7 @@ public class Driver {
     private Long id;
     private String firstName;
     private String lastName;
+    @Enumerated(EnumType.STRING)
     private SalaryType salaryType;
     @Enumerated(EnumType.STRING)
     private List<DrivingLicense> licenses;
@@ -68,5 +69,17 @@ public class Driver {
 
     public void setSalaryType(SalaryType salaryType) {
         this.salaryType = salaryType;
+    }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", salaryType=" + salaryType +
+                ", licenses=" + licenses +
+                ", orders=" + orders +
+                '}';
     }
 }
