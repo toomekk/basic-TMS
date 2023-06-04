@@ -21,7 +21,9 @@ public class TruckService {
 
     public void addTruck(TruckRequest truckRequest) {
         DriverRequest driverRequest;
-
+        if(truckRequest.getBrand().toString().isEmpty()) {
+            throw new IllegalArgumentException("Wybierz markę ciężarówki!");
+        }
         Truck truck = new Truck(truckRequest.getBrand(), truckRequest.getModel(), truckRequest.getTruckWeight(), truckRequest.getTruckMileage(),
                 truckRequest.getLastReviewDate(), truckRequest.getReviewLimit(),
                 DrivingLicense.valueOf(truckRequest.getLicense()));

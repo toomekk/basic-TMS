@@ -36,6 +36,7 @@ public class Tire {
         return tireBrand;
     }
 
+
     public void setTireBrand(TireBrand tireBrand) {
         this.tireBrand = tireBrand;
     }

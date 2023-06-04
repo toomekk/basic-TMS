@@ -1,6 +1,9 @@
 package com.example.basictms.entity;
 
+import com.example.basictms.entity.enums.SalaryType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
@@ -12,18 +15,18 @@ public class Driver {
     private Long id;
     private String firstName;
     private String lastName;
-    private long salary;
+    private SalaryType salaryType;
     @Enumerated(EnumType.STRING)
     private List<DrivingLicense> licenses;
 
     public Driver() {
     }
 
-    public Driver(String firstName, String lastName, List<DrivingLicense> license) {
+    public Driver(String firstName, String lastName, SalaryType salaryType, List<DrivingLicense> licenses) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.licenses = license;
-        this.salary = salary;
+        this.salaryType = salaryType;
+        this.licenses = licenses;
     }
 
     public String getFirstName() {
@@ -50,11 +53,11 @@ public class Driver {
         this.licenses = license;
     }
 
-    public long getSalary() {
-        return salary;
+    public SalaryType getSalaryType() {
+        return salaryType;
     }
 
-    public void setSalary(long salary) {
-        this.salary = salary;
+    public void setSalaryType(SalaryType salaryType) {
+        this.salaryType = salaryType;
     }
 }

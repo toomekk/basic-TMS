@@ -6,6 +6,7 @@ import com.example.basictms.request.OrderCreationRequest;
 import com.example.basictms.request.OrderFilterRequest;
 import com.example.basictms.response.OrderResponse;
 import com.example.basictms.service.OrderService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +29,7 @@ public class OrderController {
     }
 
     @PostMapping("/order/add")
-    public String createOrder(@RequestParam String startingPoint,
+    public String createOrder(@Valid @RequestParam String startingPoint,
                               @RequestParam String destination,
                                @RequestParam LocalDate startDate,
                                @RequestParam LocalDate endDate,

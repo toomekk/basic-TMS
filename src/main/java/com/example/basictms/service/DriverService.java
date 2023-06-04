@@ -15,11 +15,11 @@ public class DriverService {
     public DriverService(DriverRepository driverRepository){this.driverRepository = driverRepository;}
 
     public void addDriver(DriverRequest driverRequest){
-        if (driverRequest.getFirstName().isEmpty()) {
-            throw new IllegalArgumentException("Nie podano imienia");
+        if (driverRequest.getFirstName().isEmpty()){
+            throw new IllegalArgumentException("Nie podano danych !");
         }
         List<DrivingLicense> drivingLicense = driverRequest.getLicense();
-        Driver driver = new Driver(driverRequest.getFirstName(), driverRequest.getLastName(),drivingLicense );
+        Driver driver = new Driver(driverRequest.getFirstName(), driverRequest.getLastName(), driverRequest.getSalaryType(),drivingLicense );
         driverRepository.save(driver);
     }
 }

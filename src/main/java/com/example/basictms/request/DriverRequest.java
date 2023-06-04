@@ -3,19 +3,24 @@ package com.example.basictms.request;
 
 
 import com.example.basictms.entity.DrivingLicense;
+import com.example.basictms.entity.enums.SalaryType;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.util.List;
 
 public class DriverRequest {
 
-
+        @NotEmpty(message = "Imię nie może być puste!")
         private String firstName;
+        @NotEmpty(message = "Nazwisko nie może być puste!")
         private String lastName;
+        private SalaryType salaryType;
         private List<DrivingLicense> license;
 
-    public DriverRequest(String firstName, String lastName, List<DrivingLicense> license) {
+    public DriverRequest(String firstName, String lastName, SalaryType salaryType, List<DrivingLicense> license) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.salaryType = salaryType;
         this.license = license;
     }
 
@@ -43,12 +48,21 @@ public class DriverRequest {
         this.license = license;
     }
 
+    public SalaryType getSalaryType() {
+        return salaryType;
+    }
+
+    public void setSalaryType(SalaryType salaryType) {
+        this.salaryType = salaryType;
+    }
+
     @Override
     public String toString() {
         return "DriverRequest{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", license='" + license + '\'' +
+                ", salaryType=" + salaryType +
+                ", license=" + license +
                 '}';
     }
 }

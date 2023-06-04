@@ -2,6 +2,10 @@ package com.example.basictms.entity;
 
 import com.example.basictms.entity.enums.OrderStatus;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDate;
 
@@ -11,12 +15,17 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @NotBlank
     private String startingPoint;
+    @NotBlank
     private String destination;
+    @FutureOrPresent
     private LocalDate startDate;
+    @Future
     private LocalDate endDate;
     @Enumerated
     private OrderStatus orderStatus;
+    @Min(1)
     private double offeredPrice;
 
     public Order() {

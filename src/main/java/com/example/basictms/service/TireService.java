@@ -14,6 +14,9 @@ public class TireService {
         this.tireRepository = tireRepository;
     }
     public void addTire(TireRequest tireRequest){
+        if (tireRequest.getTireBrand() == null){
+            throw new IllegalArgumentException("Wszystkie pola są wymagane! Uzupełnij dane");
+        }
         Tire tire = new Tire(tireRequest.getTireBrand(),tireRequest.getNewUsedTire(), tireRequest.getTireLifeKm());
         tireRepository.save(tire);
     }
