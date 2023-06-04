@@ -15,15 +15,15 @@ public class Truck {
     @Id
     @GeneratedValue
     private Long id;
-    @NotBlank
+
     private TruckBrand brand;
-    @NotBlank
+
     private String model;
-    @NotBlank
+
     private String truckWeight;
-    @Min(1)
+
     private long truckMileage;  //przebieg
-    @Past
+
     private String lastReviewDate;  //data ostatniego przeglądu
     private long reviewLimit;
 

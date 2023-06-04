@@ -16,7 +16,7 @@ public class Order {
     private String destination;
     private LocalDate startDate;
     private LocalDate endDate;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
     private double offeredPrice;
     @ManyToOne
