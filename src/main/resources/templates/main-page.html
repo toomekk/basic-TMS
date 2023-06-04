@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Aplikacja do zarządzania flotą pojazdów w firmie</title>
-    <!--  <link rel="stylesheet" type="text/css" href="styles.css"/>-->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <!--  <script src="script.js" defer></script>-->
+
 </head>
 <body>
-<h1>TMS Basic Transport Management System</h1>
-<h2>Panel startowy:</h2>
-<h3 th:text="${message}"></h3>
-<ul>
-
-    <li><a href="/truck/add"> Dodaj Pojazd</a></li>
-    <li><a href="/driver/add">Dodaj Kierowce</a></li>
-    <li><a href="/trailer/add">Dodaj Naczepę</a></li>
-    <li><a href="/tire/add">Dodaj Opony</a></li>
-    <li><a href="/orders-panel">Panel Zamówień</a></li>
-
-
-    <!--  <li><a href="/add-port"> Dodaj naczepe</a></li>-->
-    <!--  <li><a href="/top-populated">Dodaj fakture</a> </li>-->
-    <br>
-    <li><a href="/console">Debug: Konsola bazy danych</a></li>
-
-</ul>
+<div class="ramka">
+    <h1 class="pasek-tytul">TMS Basic Transport Management System</h1>
+    <div>
+        <h2>Panel startowy:</h2>
+        <h3 th:text="${message}"></h3>
+            <ul>
+                <li><a href="/truck/add"> Dodaj Pojazd</a></li>
+                <li><a href="/driver/add">Dodaj Kierowce</a></li>
+                <li><a href="/trailer/add">Dodaj Naczepę</a></li>
+                <li><a href="/tire/add">Dodaj Opony</a></li>
+                <li><a href="/orders-panel">Panel Zamówień</a></li>
+                <br>
+                <li><a href="/console">Debug: Konsola bazy danych</a></li>
+            </ul>
+    </div>
+</div>
 </body>
 </html>
