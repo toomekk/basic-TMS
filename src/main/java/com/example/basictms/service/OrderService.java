@@ -2,9 +2,11 @@ package com.example.basictms.service;
 
 import com.example.basictms.entity.Driver;
 import com.example.basictms.entity.Order;
+import com.example.basictms.entity.Truck;
 import com.example.basictms.entity.enums.OrderStatus;
 import com.example.basictms.repository.DriverRepository;
 import com.example.basictms.repository.OrderRepository;
+import com.example.basictms.repository.TruckRepository;
 import com.example.basictms.request.OrderCompleteRequest;
 import com.example.basictms.request.OrderCreationRequest;
 import com.example.basictms.request.OrderFilterRequest;
@@ -19,10 +21,12 @@ import java.util.List;
 public class OrderService {
     private OrderRepository orderRepository;
     private DriverRepository driverRepository;
+    private TruckRepository truckRepository;
 
-    public OrderService(OrderRepository orderRepository, DriverRepository driverRepository) {
+    public OrderService(OrderRepository orderRepository, DriverRepository driverRepository, TruckRepository truckRepository) {
         this.orderRepository = orderRepository;
         this.driverRepository = driverRepository;
+        this.truckRepository = truckRepository;
     }
 
     public void createOrder(OrderCreationRequest request) {
@@ -50,7 +54,9 @@ public class OrderService {
     public void completeOrder(OrderCompleteRequest completeRequest){
         Order order = orderRepository.findById(completeRequest.getOrderId()).orElseThrow();
         Driver driver = driverRepository.findById(completeRequest.getDriverId()).orElseThrow();
+        Truck truck = truckRepository.findById(completeRequest.getTruckId()).orElseThrow();
         order.setDriver(driver);
+        order.setTruck(truck);
         orderRepository.save(order);
     }
 
