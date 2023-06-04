@@ -79,4 +79,10 @@ public class OrderController {
         return "main-page";
     }
 
+    @GetMapping("/orders-panel")
+    public String getOrdersPanel() {
+        return "orders-panel";
+    }
 }
+
+
