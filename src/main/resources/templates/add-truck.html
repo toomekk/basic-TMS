@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add truc</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Add truck</title>
 </head>
 <body>
-<h1> Dodaj Pojazd</h1>
+<div th:text="${error}"> </div>
+<h1 class="valid-error"> Dodaj Pojazd</h1>
 
-<form action="/truck/add" method="post" enctype="multipart/form-data">
+<form th:object="${truck}" action="/truck/add" method="post" enctype="multipart/form-data">
     <label>Marka:</label>
-    <select name="brand" id="brand">
+    <select name="brand" id="brand" >
         <option value="MERCEDES"> MERCEDES</option>
         <option value="SCANIA"> SCANIA</option>
         <option value="VOLVO"> VOLVO</option>
@@ -18,13 +20,16 @@
         <option value="DAF"> DAF</option>
         <option value="RENAULT"> RENAULT</option>
     </select>
+<!--    <p th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}"></p>-->
 
     <label>Model:</label>
-    <input type="text" name="model">
+    <input type="text" name="model" th:field="*{model}">
+    <p class="valid-error" th:if="${#fields.hasErrors('model')}" th:errors="*{model}"></p>
     <br>
     <br>
     <label>Masa całkowita:</label>
-    <input type="text" name="truckWeight">
+    <input type="text" name="truckWeight" th:field="*{truckWeight}">
+    <p class="valid-error" th:if="${#fields.hasErrors('truckWeight')}" th:errors="*{truckWeight}"></p>
       <label>Przebieg:</label>
     <input type="text" name="truckMileage">
     <br>

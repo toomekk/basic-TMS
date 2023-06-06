@@ -1,10 +1,15 @@
 package com.example.basictms.request;
 
 import com.example.basictms.entity.enums.TruckBrand;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
 
 public class TruckRequest {
+// pola brand nie trzeba zabezpieczać - zawsze jest coś wybrane
     private TruckBrand brand;
+    @NotEmpty(message = "ERROR ! Pole model nie może być puste!")
     private String model;
+    @Min(value = 1, message = "ERROR ! masa pojazdu musi być większy od 1!")
     private String truckWeight;
     private String license;
     private long truckMileage;  //przebieg
